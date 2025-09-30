@@ -34,8 +34,15 @@ class CounterTest {
   
   @Test
   void testGetLower() {
-    Counter c = new Counter(5, 10); 
+    Counter c = new Counter(5, 10);
     assertEquals(5, c.getLower(), "getLower() should return the correct lower bound");
   }
+  
+  @Test
+  void testGetUpper() {
+    Counter c = new Counter(5, 10);
+    assertEquals(10, c.getUpper(), "getUpper() should return the correct upper bound");
+  }
+  
 
 }
