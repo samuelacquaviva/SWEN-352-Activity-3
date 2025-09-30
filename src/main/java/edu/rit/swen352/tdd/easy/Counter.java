@@ -34,11 +34,18 @@ public class Counter {
     this.count = lower;// start at lower bound 
   }
 
-  public Counter(int lower) { 
+  public Counter(int lower) {
     this.lower = lower;
-     this.upper = Integer.MAX_VALUE;
-     this.count = lower; // start at lower bound
-    }
+    this.upper = Integer.MAX_VALUE;
+    this.count = lower; // start at lower bound
+  }
+  
+  public Counter() {
+    this.lower = 0;
+    this.upper = Integer.MAX_VALUE;
+    this.count = 0;
+  }
+    
 
   public int getLower() {
     return lower;
@@ -51,7 +58,7 @@ public class Counter {
   public int getCount() {
     return count;
   }
-  
+
    
 
 }
