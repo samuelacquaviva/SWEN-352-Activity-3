@@ -25,13 +25,16 @@ public class MyStack<T> {
   private static final int DEFAULT_CAPACITY = 16;
   private final int capacity;
   private int size = 0;
+  private final Object[] elements;
 
   public MyStack() {
     this.capacity = DEFAULT_CAPACITY;
+    this.elements = new Object[capacity];
   }
 
   public MyStack(int capacity) {
     this.capacity = capacity;
+    this.elements = new Object[capacity];
   }
 
   public int getCapacity() {
@@ -47,6 +50,13 @@ public class MyStack<T> {
   }
 
   public void push(T element) {
-    size++;
+    elements[size++] = element;
   }
+
+  @SuppressWarnings("unchecked")
+  public T pop() {
+    T element = (T) elements[--size];
+    elements[size] = null; // clear reference return element;
+    return element;
+    }
 }
