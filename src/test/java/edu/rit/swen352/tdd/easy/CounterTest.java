@@ -43,6 +43,12 @@ class CounterTest {
     Counter c = new Counter(5, 10);
     assertEquals(10, c.getUpper(), "getUpper() should return the correct upper bound");
   }
+
+  @Test
+  void testGetCountInitially() {
+    Counter c = new Counter(7, 15); 
+    assertEquals(7, c.getCount(), "getCount() should return the current count (initially the lower bound)");
+  }
   
 
 }
