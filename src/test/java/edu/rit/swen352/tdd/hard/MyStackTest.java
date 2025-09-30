@@ -1,6 +1,7 @@
 package edu.rit.swen352.tdd.hard;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -25,5 +26,16 @@ class MyStackTest {
     assertEquals(10, stack.getCapacity());
     assertTrue(stack.isEmpty());
   }
+
+
+  @Test
+  void pushIncreasesSize() {
+    MyStack<Integer> stack = new MyStack<>(5);
+    stack.push(42);
+    assertFalse(stack.isEmpty());
+    assertEquals(1, stack.size());
+  }
+
+
 
 }
