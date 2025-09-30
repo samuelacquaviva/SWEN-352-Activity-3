@@ -15,6 +15,7 @@ class TemperatureTest {
     @DisplayName("Create basic Temperature object")
     public void testBasicConstructor(){
         Temperature temperature = new Temperature(0.0, TemperatureUnit.FAHRENHEIT);
+        assertTrue(temperature instanceof Temperature);
     }
 
 }
