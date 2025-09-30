@@ -1,6 +1,7 @@
 package edu.rit.swen352.tdd.easy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -56,6 +57,16 @@ class CounterTest {
     c.increment(); // increment once
     assertEquals(6, c.getCount(), "Count should increase by 1 after one increment");
   }
+
+  @Test
+void testIncrementUntilUpperBoundThrows() {
+    Counter c = new Counter(8, 10); // lower bound = 8, upper bound = 10
+    c.increment(); // 9
+    c.increment(); // 10
+
+    assertThrows(IllegalStateException.class, c::increment, 
+        "Incrementing beyond upper bound should throw IllegalStateException");
+}
   
 
 }
