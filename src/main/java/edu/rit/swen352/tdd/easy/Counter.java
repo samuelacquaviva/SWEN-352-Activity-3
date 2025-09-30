@@ -48,7 +48,7 @@ public class Counter {
     
 
   public int getLower() {
-    return lower;
+    return lower; // simply return the stored lower bound
   }
 
   public int getUpper() {
