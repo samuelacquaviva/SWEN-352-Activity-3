@@ -76,6 +76,13 @@ class CounterTest {
     assertEquals(5, c.getCount(), "Count should decrease by 1 after one decrement");
   }
 
+  @Test
+  void testDecrementAtLowerBoundThrows() {
+    Counter c = new Counter(5, 10); // lower bound = 5
+    assertThrows(IllegalStateException.class, c::decrement,
+        "Decrementing at the lower bound should throw IllegalStateException");
+  }
+
   
 
 }
