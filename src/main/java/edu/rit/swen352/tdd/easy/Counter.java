@@ -24,4 +24,25 @@ package edu.rit.swen352.tdd.easy;
  * </ul>
  */
 public class Counter {
+  private final int lower;
+  private final int upper;
+  private int count;
+
+  public Counter(int lower, int upper) {
+    this.lower = lower;
+    this.upper = upper;
+    this.count = lower;// start at lower bound 
+  }
+
+  public int getLower() {
+    return lower;
+  }
+
+  public int getUpper() {
+    return upper;
+  }
+
+  public int getCount() {
+    return count;
+   }
 }
