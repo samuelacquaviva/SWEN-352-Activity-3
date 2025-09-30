@@ -38,4 +38,15 @@ class MyStackTest {
 
 
 
+  @Test
+  void popReturnsLastPushedElement() {
+    MyStack<String> stack = new MyStack<>(5);
+    stack.push("A");
+    stack.push("B");
+    assertEquals("B", stack.pop());
+    assertEquals("A", stack.pop());
+    assertTrue(stack.isEmpty());
+  }
+
+
 }
