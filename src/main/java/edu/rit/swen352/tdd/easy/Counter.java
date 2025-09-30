@@ -70,7 +70,7 @@ public class Counter {
     if (count <= lower) {
       throw new IllegalStateException("Count has reached the lower limit");
     }
-    count--;
+    count--; // reach the lower limit 
   }
 
    
