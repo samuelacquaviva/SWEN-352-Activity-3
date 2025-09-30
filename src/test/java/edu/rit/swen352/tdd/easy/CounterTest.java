@@ -46,8 +46,15 @@ class CounterTest {
 
   @Test
   void testGetCountInitially() {
-    Counter c = new Counter(7, 15); 
+    Counter c = new Counter(7, 15);
     assertEquals(7, c.getCount(), "getCount() should return the current count (initially the lower bound)");
+  }
+  
+  @Test
+  void testIncrementOnceFromLowerBound() {
+    Counter c = new Counter(5, 10); // lower bound = 5
+    c.increment(); // increment once
+    assertEquals(6, c.getCount(), "Count should increase by 1 after one increment");
   }
   
 
