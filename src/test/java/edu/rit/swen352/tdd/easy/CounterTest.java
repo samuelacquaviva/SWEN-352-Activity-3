@@ -59,14 +59,23 @@ class CounterTest {
   }
 
   @Test
-void testIncrementUntilUpperBoundThrows() {
+  void testIncrementUntilUpperBoundThrows() {
     Counter c = new Counter(8, 10); // lower bound = 8, upper bound = 10
     c.increment(); // 9
     c.increment(); // 10
 
-    assertThrows(IllegalStateException.class, c::increment, 
+    assertThrows(IllegalStateException.class, c::increment,
         "Incrementing beyond upper bound should throw IllegalStateException");
-}
+  }
+
+  @Test
+  void testDecrementOnceFromAboveLowerBound() {
+    Counter c = new Counter(5, 10); // lower bound = 5
+    c.increment(); // count = 6
+    c.decrement(); // should go back to 5
+    assertEquals(5, c.getCount(), "Count should decrease by 1 after one decrement");
+  }
+
   
 
 }
