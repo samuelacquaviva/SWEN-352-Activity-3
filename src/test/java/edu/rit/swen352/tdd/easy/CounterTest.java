@@ -1,13 +1,19 @@
 package edu.rit.swen352.tdd.easy;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test suite for the {@link Counter} component.
  */
 class CounterTest {
+  @Test
+  void testConstructorWithBothBounds() {
+    Counter c = new Counter(5, 10);
+    assertEquals(5, c.getLower(), "Lower bound should be 5");
+    assertEquals(10, c.getUpper(), "Upper bound should be 10");
+    assertEquals(5, c.getCount(), "Initial count should start at lower bound");
+  }
 
 }
