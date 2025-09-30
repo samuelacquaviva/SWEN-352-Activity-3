@@ -17,12 +17,15 @@ package edu.rit.swen352.tdd.easy;
  * </ul>
  */
 public class Temperature {
-
-  public Temperature(double value, TemperatureUnit unit) {
-    assert false;
-  }
+  private double value;
+  private TemperatureUnit unit;
 
   public enum TemperatureUnit {
     CELSIUS, FAHRENHEIT, KELVIN;
+  }
+
+  public Temperature(double value, TemperatureUnit unit) {
+    this.value = value;
+    this.unit = unit;
   }
 }
