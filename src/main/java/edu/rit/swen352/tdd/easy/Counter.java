@@ -52,7 +52,7 @@ public class Counter {
   }
 
   public int getUpper() {
-    return upper;
+    return upper;// simply return the stored upper bound
   }
 
   public int getCount() {
