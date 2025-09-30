@@ -30,6 +30,7 @@ public class Temperature {
   }
 
   public Temperature(double value) {
-    assert false;
+    this.value = value;
+    this.unit = TemperatureUnit.CELSIUS;
   }
 }
