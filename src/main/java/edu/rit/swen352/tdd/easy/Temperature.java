@@ -17,6 +17,11 @@ package edu.rit.swen352.tdd.easy;
  * </ul>
  */
 public class Temperature {
+
+  public Temperature(double value, TemperatureUnit unit) {
+    assert false;
+  }
+
   public enum TemperatureUnit {
     CELSIUS, FAHRENHEIT, KELVIN;
   }
