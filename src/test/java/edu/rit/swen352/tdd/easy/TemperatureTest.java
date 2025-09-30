@@ -13,9 +13,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class TemperatureTest {
     @Test
     @DisplayName("Create basic Temperature object")
-    public void testBasicConstructor(){
+    public void testConstructor1(){
         Temperature temperature = new Temperature(0.0, TemperatureUnit.FAHRENHEIT);
         assertTrue(temperature instanceof Temperature);
     }
 
+    @Test
+    @DisplayName("Create Temperature object without unit")
+    public void testConstructor2(){
+        Temperature temperature = new Temperature(0.0);
+        assertTrue(temperature instanceof Temperature);
+    }
 }
