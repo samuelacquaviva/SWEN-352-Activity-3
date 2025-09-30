@@ -56,7 +56,7 @@ public class Counter {
   }
 
   public int getCount() {
-    return count;
+    return count; // return the current count
   }
 
    
