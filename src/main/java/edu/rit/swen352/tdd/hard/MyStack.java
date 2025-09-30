@@ -24,6 +24,7 @@ package edu.rit.swen352.tdd.hard;
 public class MyStack<T> {
   private static final int DEFAULT_CAPACITY = 16;
   private final int capacity;
+  private int size = 0;
 
   public MyStack() {
     this.capacity = DEFAULT_CAPACITY;
@@ -38,10 +39,14 @@ public class MyStack<T> {
   }
 
   public boolean isEmpty() {
-    return true;
+    return size == 0;
   }
 
   public int size() {
-    return 0;
+    return size;
+  }
+
+  public void push(T element) {
+    size++;
   }
 }
