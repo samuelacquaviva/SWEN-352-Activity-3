@@ -59,6 +59,13 @@ public class Counter {
     return count; // return the current count
   }
 
+  public void increment() {
+    if (count >= upper) {
+      throw new IllegalStateException("Count has reached the upper limit");
+    }
+    count++;
+  }
+
    
 
 }
