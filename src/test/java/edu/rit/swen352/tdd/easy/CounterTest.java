@@ -26,13 +26,16 @@ class CounterTest {
 
   @Test
   void testNoArgsConstructor() {
-    Counter c = new Counter(); // This does not exist yet
+    Counter c = new Counter();
     assertEquals(0, c.getLower(), "Lower bound should default to 0");
     assertEquals(Integer.MAX_VALUE, c.getUpper(), "Upper bound should default to Integer.MAX_VALUE");
     assertEquals(0, c.getCount(), "Initial count should start at lower bound (0)");
   }
-
-
-
+  
+  @Test
+  void testGetLower() {
+    Counter c = new Counter(5, 10); 
+    assertEquals(5, c.getLower(), "getLower() should return the correct lower bound");
+  }
 
 }
