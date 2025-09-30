@@ -17,4 +17,13 @@ class MyStackTest {
     assertEquals(0, stack.size());
   }
 
+  
+
+  @Test
+  void constructStackWithCustomCapacity() {
+    MyStack<String> stack = new MyStack<>(10);
+    assertEquals(10, stack.getCapacity());
+    assertTrue(stack.isEmpty());
+  }
+
 }
