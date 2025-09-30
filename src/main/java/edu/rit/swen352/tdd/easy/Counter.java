@@ -61,7 +61,7 @@ public class Counter {
 
   public void increment() {
     if (count >= upper) {
-      throw new IllegalStateException("Count has reached the upper limit");
+      throw new IllegalStateException("Count has reached the upper limit"); // reach the maximum
     }
     count++;
   }
