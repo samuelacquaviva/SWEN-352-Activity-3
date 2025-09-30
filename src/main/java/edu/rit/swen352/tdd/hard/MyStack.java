@@ -1,5 +1,7 @@
 package edu.rit.swen352.tdd.hard;
 
+import java.util.NoSuchElementException;
+
 /**
  * MyStack is a fixed-size, LIFO (last-in-first-out) stack.
  * 
@@ -22,41 +24,46 @@ package edu.rit.swen352.tdd.hard;
  * @param <T> the type of elements in the stack.
  */
 public class MyStack<T> {
-  private static final int DEFAULT_CAPACITY = 16;
-  private final int capacity;
-  private int size = 0;
-  private final Object[] elements;
+    private static final int DEFAULT_CAPACITY = 16;
+    private final int capacity;
+    private int size = 0;
+    private final Object[] elements;
 
-  public MyStack() {
-    this.capacity = DEFAULT_CAPACITY;
-    this.elements = new Object[capacity];
-  }
+    public MyStack() {
+        this(DEFAULT_CAPACITY);
+    }
 
-  public MyStack(int capacity) {
-    this.capacity = capacity;
-    this.elements = new Object[capacity];
-  }
+    public MyStack(int capacity) {
+        this.capacity = capacity;
+        this.elements = new Object[capacity];
+    }
 
-  public int getCapacity() {
-    return capacity;
-  }
+    public int getCapacity() {
+        return capacity;
+    }
 
-  public boolean isEmpty() {
-    return size == 0;
-  }
+    public boolean isEmpty() {
+        return size == 0;
+    }
 
-  public int size() {
-    return size;
-  }
+    public int size() {
+        return size;
+    }
 
-  public void push(T element) {
-    elements[size++] = element;
-  }
+    public void push(T element) {
+        if (size == capacity) {
+            throw new IllegalStateException("Stack is full");
+        }
+        elements[size++] = element;
+    }
 
-  @SuppressWarnings("unchecked")
-  public T pop() {
-    T element = (T) elements[--size];
-    elements[size] = null; // clear reference return element;
-    return element;
+    @SuppressWarnings("unchecked")
+    public T pop() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("Stack is empty");
+        }
+        T element = (T) elements[--size];
+        elements[size] = null; // clear reference
+        return element;
     }
 }
