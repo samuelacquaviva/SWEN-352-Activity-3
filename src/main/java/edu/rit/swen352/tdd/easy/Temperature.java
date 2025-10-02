@@ -58,7 +58,10 @@ public class Temperature {
   }
 
   public Temperature convert(TemperatureUnit unit){
-    assert false;
+    if(this.getUnit() == TemperatureUnit.CELSIUS && unit == TemperatureUnit.FAHRENHEIT){
+      double newValue = (this.getValue() * 9/5) + 32;
+      return new Temperature(newValue, TemperatureUnit.FAHRENHEIT);
+    }
     return new Temperature(0);
   } 
 }
