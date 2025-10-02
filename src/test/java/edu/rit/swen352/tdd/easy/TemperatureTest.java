@@ -83,4 +83,15 @@ class TemperatureTest {
         newTemperature = temperature.convert(TemperatureUnit.FAHRENHEIT);
         assertTrue(newTemperature.getUnit() == TemperatureUnit.FAHRENHEIT && newTemperature.getValue() == 32);
     }
+
+    @Test
+    @DisplayName("Test conversions between Temperatures using the same unit")
+    public void testConversion2(){
+        Temperature temperature = null; 
+        Temperature newTemperature = null;
+    
+        temperature = new Temperature(0);
+        newTemperature = temperature.convert(TemperatureUnit.CELSIUS);
+        assertFalse(newTemperature.getUnit() == TemperatureUnit.CELSIUS);
+    }
 }
