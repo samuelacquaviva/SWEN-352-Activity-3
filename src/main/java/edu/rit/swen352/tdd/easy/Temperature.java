@@ -1,5 +1,8 @@
 package edu.rit.swen352.tdd.easy;
 
+import java.security.InvalidAlgorithmParameterException;
+import java.util.InputMismatchException;
+
 /**
  * An temperature measurement.
  *
@@ -26,10 +29,11 @@ public class Temperature {
 
   public Temperature(double value, TemperatureUnit unit) {
     if(value < 0 && unit == TemperatureUnit.KELVIN){
-      assert false;
+      throw new InputMismatchException("ERROR: Values below absolute zero aren't permitted.");
+    }else{
+      this.value = value;
+      this.unit = unit;
     }
-    this.value = value;
-    this.unit = unit;
   }
 
   public Temperature(double value) {

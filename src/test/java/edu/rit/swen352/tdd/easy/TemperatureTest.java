@@ -7,6 +7,8 @@ import edu.rit.swen352.tdd.easy.Temperature.TemperatureUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.InputMismatchException;
+
 /**
  * Test suite for the {@link Temperature} component.
  */
@@ -28,7 +30,11 @@ class TemperatureTest {
     @Test
     @DisplayName("Create Temperature object with unit below absolute zero")
     public void testConstructor3(){
-        Temperature temperature = new Temperature(-.1, TemperatureUnit.KELVIN);
-        assertTrue(temperature instanceof Temperature);
+        Temperature temperature = null;
+        try{
+            temperature = new Temperature(-.1, TemperatureUnit.KELVIN);
+        }catch(InputMismatchException e){
+            assertFalse(temperature instanceof Temperature);
+        }
     }
 }
