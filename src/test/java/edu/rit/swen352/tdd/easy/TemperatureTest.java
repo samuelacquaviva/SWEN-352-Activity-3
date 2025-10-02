@@ -58,4 +58,12 @@ class TemperatureTest {
             assertFalse(temperature instanceof Temperature);
         }
     }
+
+    @Test
+    @DisplayName("Test conversions between Temperatures")
+    public void testConversion1(){
+        Temperature temperature = new Temperature(0);
+        Temperature newTemperature = temperature.convert(TemperatureUnit.FAHRENHEIT);
+        assertTrue(newTemperature.getUnit() == TemperatureUnit.FAHRENHEIT && newTemperature.getValue() == 32);
+    }
 }

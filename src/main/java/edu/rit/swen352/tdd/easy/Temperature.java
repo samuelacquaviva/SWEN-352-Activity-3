@@ -48,4 +48,17 @@ public class Temperature {
       this.unit = TemperatureUnit.CELSIUS;
     }
   }
+
+  public double getValue() {
+    return value;
+  }
+
+  public TemperatureUnit getUnit() {
+    return unit;
+  }
+
+  public Temperature convert(TemperatureUnit unit){
+    assert false;
+    return new Temperature(0);
+  } 
 }
