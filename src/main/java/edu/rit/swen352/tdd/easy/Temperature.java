@@ -58,10 +58,31 @@ public class Temperature {
   }
 
   public Temperature convert(TemperatureUnit unit){
-    if(this.getUnit() == TemperatureUnit.CELSIUS && unit == TemperatureUnit.FAHRENHEIT){
-      double newValue = (this.getValue() * 9/5) + 32;
-      return new Temperature(newValue, TemperatureUnit.FAHRENHEIT);
+    if(this.getUnit() == TemperatureUnit.CELSIUS){
+      if(unit == TemperatureUnit.FAHRENHEIT){
+        double newValue = (this.getValue() * 9/5) + 32;
+        return new Temperature(newValue, TemperatureUnit.FAHRENHEIT);
+      }else if(unit == TemperatureUnit.KELVIN){
+        double newValue = this.getValue() + 273.15;
+        return new Temperature(newValue, TemperatureUnit.KELVIN);
+      }
+    }else if(this.getUnit() == TemperatureUnit.FAHRENHEIT){
+      if(unit == TemperatureUnit.CELSIUS){
+        double newValue = (this.getValue() - 32) * 5/9;
+        return new Temperature(newValue, TemperatureUnit.CELSIUS);
+      }else if(unit == TemperatureUnit.KELVIN){
+        double newValue = (this.getValue() - 32) * 5/9 + 273.15;
+        return new Temperature(newValue, TemperatureUnit.KELVIN);
+      }
+    }else if(this.getUnit() == TemperatureUnit.KELVIN){
+      if(unit == TemperatureUnit.CELSIUS){
+        double newValue = this.getValue() - 273.15;
+        return new Temperature(newValue, TemperatureUnit.CELSIUS);
+      }else if(unit == TemperatureUnit.FAHRENHEIT){
+        double newValue = (this.getValue() - 273.15) * 9/5 + 32;
+        return new Temperature(newValue, TemperatureUnit.FAHRENHEIT);
+      }
     }
-    return new Temperature(0);
+    throw new IllegalArgumentException("ERROR: Original object has invalid unit.");
   } 
 }

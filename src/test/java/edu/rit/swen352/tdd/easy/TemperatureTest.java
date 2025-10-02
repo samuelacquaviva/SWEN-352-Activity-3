@@ -65,5 +65,22 @@ class TemperatureTest {
         Temperature temperature = new Temperature(0);
         Temperature newTemperature = temperature.convert(TemperatureUnit.FAHRENHEIT);
         assertTrue(newTemperature.getUnit() == TemperatureUnit.FAHRENHEIT && newTemperature.getValue() == 32);
+
+        newTemperature = temperature.convert(TemperatureUnit.KELVIN);
+        assertTrue(newTemperature.getUnit() == TemperatureUnit.KELVIN && newTemperature.getValue() == 273.15);
+
+        temperature = new Temperature(32, TemperatureUnit.FAHRENHEIT);
+        newTemperature = temperature.convert(TemperatureUnit.CELSIUS);
+        assertTrue(newTemperature.getUnit() == TemperatureUnit.CELSIUS && newTemperature.getValue() == 0);
+
+        newTemperature = temperature.convert(TemperatureUnit.KELVIN);
+        assertTrue(newTemperature.getUnit() == TemperatureUnit.KELVIN && newTemperature.getValue() == 273.15);
+
+        temperature = new Temperature(273.15, TemperatureUnit.KELVIN);
+        newTemperature = temperature.convert(TemperatureUnit.CELSIUS);
+        assertTrue(newTemperature.getUnit() == TemperatureUnit.CELSIUS && newTemperature.getValue() == 0);
+
+        newTemperature = temperature.convert(TemperatureUnit.FAHRENHEIT);
+        assertTrue(newTemperature.getUnit() == TemperatureUnit.FAHRENHEIT && newTemperature.getValue() == 32);
     }
 }
