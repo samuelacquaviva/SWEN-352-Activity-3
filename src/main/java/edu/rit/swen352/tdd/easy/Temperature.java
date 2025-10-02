@@ -25,6 +25,9 @@ public class Temperature {
   }
 
   public Temperature(double value, TemperatureUnit unit) {
+    if(value < 0 && unit == TemperatureUnit.KELVIN){
+      assert false;
+    }
     this.value = value;
     this.unit = unit;
   }

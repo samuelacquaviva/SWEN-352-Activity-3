@@ -24,4 +24,11 @@ class TemperatureTest {
         Temperature temperature = new Temperature(0.0);
         assertTrue(temperature instanceof Temperature);
     }
+
+    @Test
+    @DisplayName("Create Temperature object with unit below absolute zero")
+    public void testConstructor3(){
+        Temperature temperature = new Temperature(-.1, TemperatureUnit.KELVIN);
+        assertTrue(temperature instanceof Temperature);
+    }
 }
