@@ -58,6 +58,10 @@ public class Temperature {
   }
 
   public Temperature convert(TemperatureUnit unit){
+    if(this.getUnit() == unit){
+      throw new IllegalArgumentException("ERROR: Identical units");
+    }
+
     if(this.getUnit() == TemperatureUnit.CELSIUS){
       if(unit == TemperatureUnit.FAHRENHEIT){
         double newValue = (this.getValue() * 9/5) + 32;

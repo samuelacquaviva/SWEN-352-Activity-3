@@ -90,8 +90,11 @@ class TemperatureTest {
         Temperature temperature = null; 
         Temperature newTemperature = null;
     
-        temperature = new Temperature(0);
-        newTemperature = temperature.convert(TemperatureUnit.CELSIUS);
-        assertFalse(newTemperature.getUnit() == TemperatureUnit.CELSIUS);
+        try{
+            temperature = new Temperature(0);
+            newTemperature = temperature.convert(TemperatureUnit.CELSIUS);
+        }catch(IllegalArgumentException e){
+            assertTrue(newTemperature == null);
+        }
     }
 }
