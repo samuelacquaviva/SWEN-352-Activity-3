@@ -22,14 +22,18 @@ import java.util.InputMismatchException;
 public class Temperature {
   private double value;
   private TemperatureUnit unit;
+  private static final double KELVIN_ABS_ZERO = 0;
+  private static final double CELSIUS_ABS_ZERO = -273.15;
+  private static final double FAHRENHEIT_ABS_ZERO = -459.67;
 
   public enum TemperatureUnit {
     CELSIUS, FAHRENHEIT, KELVIN;
   }
 
   public Temperature(double value, TemperatureUnit unit) {
-    if(value < 0 && unit == TemperatureUnit.KELVIN){
-      throw new InputMismatchException("ERROR: Values below absolute zero aren't permitted.");
+    if(value < KELVIN_ABS_ZERO && unit == TemperatureUnit.KELVIN || value < CELSIUS_ABS_ZERO &&
+    unit == TemperatureUnit.CELSIUS || value < FAHRENHEIT_ABS_ZERO && unit == TemperatureUnit.FAHRENHEIT){
+      throw new IllegalArgumentException("ERROR: Values below absolute zero aren't permitted.");
     }else{
       this.value = value;
       this.unit = unit;
@@ -37,7 +41,11 @@ public class Temperature {
   }
 
   public Temperature(double value) {
-    this.value = value;
-    this.unit = TemperatureUnit.CELSIUS;
+    if(value < CELSIUS_ABS_ZERO){
+      throw new IllegalArgumentException("ERROR: Values below absolute zero aren't permitted.");
+    }else{
+      this.value = value;
+      this.unit = TemperatureUnit.CELSIUS;
+    }
   }
 }

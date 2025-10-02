@@ -28,12 +28,33 @@ class TemperatureTest {
     }
 
     @Test
-    @DisplayName("Create Temperature object with unit below absolute zero")
+    @DisplayName("Try to create Temperature object with unit below absolute zero")
     public void testConstructor3(){
         Temperature temperature = null;
         try{
             temperature = new Temperature(-.1, TemperatureUnit.KELVIN);
-        }catch(InputMismatchException e){
+        }catch(IllegalArgumentException e){
+            assertFalse(temperature instanceof Temperature);
+        }
+
+        temperature = null;
+        try{
+            temperature = new Temperature(-273.16, TemperatureUnit.CELSIUS);
+        }catch(IllegalArgumentException e){
+            assertFalse(temperature instanceof Temperature);
+        }
+
+        temperature = null;
+        try{
+            temperature = new Temperature(-459.67, TemperatureUnit.FAHRENHEIT);
+        }catch(IllegalArgumentException e){
+            assertFalse(temperature instanceof Temperature);
+        }
+
+        temperature = null;
+        try{
+            temperature = new Temperature(-273.16);
+        }catch(IllegalArgumentException e){
             assertFalse(temperature instanceof Temperature);
         }
     }
