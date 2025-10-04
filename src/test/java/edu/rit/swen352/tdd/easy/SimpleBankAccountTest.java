@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 /**
  * Test suite for the {@link SimpleBankAccount} component.
@@ -29,5 +30,13 @@ class SimpleBankAccountTest {
   void testIsAccountEmpty() {
     boolean expected = true;
     assertEquals(expected, sba.isAccountEmpty());
+  }
+
+  @Test
+  @DisplayName("Deposit updates balance")
+  void testDeposit() {
+    float expected = 5.20f;
+    sba.deposit(5.20f);
+    assertEquals(expected, sba.getBalance());
   }
 }
