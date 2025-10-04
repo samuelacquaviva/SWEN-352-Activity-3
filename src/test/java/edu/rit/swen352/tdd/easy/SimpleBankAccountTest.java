@@ -23,4 +23,11 @@ class SimpleBankAccountTest {
     float expected = 0;
     assertEquals(expected, sba.getBalance());
   }
+
+  @Test
+  @DisplayName("Get if account balance is 0")
+  void testIsAccountEmpty() {
+    boolean expected = true;
+    assertEquals(expected, sba.isAccountEmpty());
+  }
 }
