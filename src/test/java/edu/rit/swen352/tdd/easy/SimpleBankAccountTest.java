@@ -39,4 +39,13 @@ class SimpleBankAccountTest {
     sba.deposit(5.20f);
     assertEquals(expected, sba.getBalance());
   }
+
+  @Test
+  @DisplayName("Withdraw updates balance")
+  void testWithdraw() {
+    sba.deposit(5.20f);
+    sba.withdraw(2.3f);
+    float expected = 2.9f;
+    assertEquals(expected, sba.getBalance());
+  }
 }
