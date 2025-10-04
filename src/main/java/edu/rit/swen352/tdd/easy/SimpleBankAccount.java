@@ -20,5 +20,13 @@ package edu.rit.swen352.tdd.easy;
  * </ul>
  */
 public class SimpleBankAccount {
+  private float balance;
 
+  SimpleBankAccount() {
+    balance = 0;
+  }
+
+  float getBalance() {
+    return balance;
+  }
 }
