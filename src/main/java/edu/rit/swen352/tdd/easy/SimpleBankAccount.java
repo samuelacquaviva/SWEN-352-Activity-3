@@ -29,4 +29,8 @@ public class SimpleBankAccount {
   float getBalance() {
     return balance;
   }
+
+  boolean isAccountEmpty() {
+    return getBalance() == 0;
+  }
 }
