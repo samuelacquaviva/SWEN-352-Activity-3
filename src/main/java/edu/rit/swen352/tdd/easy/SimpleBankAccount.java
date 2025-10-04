@@ -33,4 +33,8 @@ public class SimpleBankAccount {
   boolean isAccountEmpty() {
     return getBalance() == 0;
   }
+
+  void deposit(float amount) {
+    balance += amount;
+  }
 }
