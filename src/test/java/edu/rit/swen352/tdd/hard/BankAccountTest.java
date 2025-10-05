@@ -26,9 +26,18 @@ class BankAccountTest {
   }
 
   @Test
-  @DisplayName("Get if account balance is 0")
+  @DisplayName("Get if isAccountEmpty returns true when account balance is 0")
   void testIsAccountEmpty() {
     boolean expected = true;
+    assertEquals(expected, ba.isAccountEmpty());
+  }
+
+  @Test
+  @DisplayName("Get if isAccountEmpty returns false when account balance is > 0")
+  void testIsAccountEmpty2() {
+    boolean expected = false;
+    Money depositAmount = new Money(5, 20);
+    ba.deposit(depositAmount);
     assertEquals(expected, ba.isAccountEmpty());
   }
 
