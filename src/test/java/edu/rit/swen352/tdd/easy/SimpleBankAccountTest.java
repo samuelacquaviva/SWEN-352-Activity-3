@@ -25,7 +25,7 @@ class SimpleBankAccountTest {
   }
 
   @Test
-  @DisplayName("Get if account balance is 0")
+  @DisplayName("Get if isAccountEmpty returns true when account balance is 0")
   void testIsAccountEmpty() {
     boolean expected = true;
     assertEquals(expected, sba.isAccountEmpty());
