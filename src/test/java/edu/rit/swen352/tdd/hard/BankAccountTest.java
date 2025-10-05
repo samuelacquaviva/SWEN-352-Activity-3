@@ -40,4 +40,14 @@ class BankAccountTest {
     String expected = "$5.20";
     assertEquals(expected, ba.getBalance());
   }
+
+  @Test
+  @DisplayName("Withdraw updates balance")
+  void testWithdraw() {
+    ba.deposit(new Money(5, 20));
+    Money withdrawAmount = new Money(2, 30);
+    ba.withdraw(withdrawAmount);
+    String expected = "$2.90";
+    assertEquals(expected, ba.getBalance());
+  }
 }
