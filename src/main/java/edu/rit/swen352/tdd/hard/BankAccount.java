@@ -46,4 +46,10 @@ public class BankAccount {
     return "$" + getDollars() + "." + getCents();
   }
 
+  boolean isAccountEmpty() {
+    if (getDollars() == 0 && getCents() == 0) 
+      return true;
+    return false;
+  }
+
 }
