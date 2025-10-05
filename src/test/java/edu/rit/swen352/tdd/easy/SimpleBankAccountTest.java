@@ -32,6 +32,14 @@ class SimpleBankAccountTest {
   }
 
   @Test
+  @DisplayName("Get if isAccountEmpty returns false when account balance is > 0")
+  void testIsAccountEmpty2() {
+    boolean expected = false;
+    sba.deposit(1.20f);
+    assertEquals(expected, sba.isAccountEmpty());
+  }
+
+  @Test
   @DisplayName("Deposit updates balance")
   void testDeposit() {
     float expected = 5.20f;
