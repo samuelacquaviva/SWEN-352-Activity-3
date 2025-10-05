@@ -31,4 +31,13 @@ class BankAccountTest {
     boolean expected = true;
     assertEquals(expected, ba.isAccountEmpty());
   }
+
+  @Test
+  @DisplayName("Deposit updates balance")
+  void testDeposit() {
+    Money depositAmount = new Money(5, 20);
+    ba.deposit(depositAmount);
+    String expected = "$5.20";
+    assertEquals(expected, ba.getBalance());
+  }
 }
