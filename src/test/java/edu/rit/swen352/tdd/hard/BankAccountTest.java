@@ -24,4 +24,11 @@ class BankAccountTest {
     String expected = "$0.00";
     assertEquals(expected, ba.getBalance());
   }
+
+  @Test
+  @DisplayName("Get if account balance is 0")
+  void testIsAccountEmpty() {
+    boolean expected = true;
+    assertEquals(expected, ba.isAccountEmpty());
+  }
 }
