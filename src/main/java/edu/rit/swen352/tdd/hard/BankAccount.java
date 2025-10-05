@@ -51,5 +51,17 @@ public class BankAccount {
       return true;
     return false;
   }
+  
+  void deposit(Money amount) {
+    int newDollarAmount = getDollars() + amount.dollars();
+    int newCentAmount = getCents() + amount.cents();
+
+    if (newCentAmount > 100) {
+      newDollarAmount += 1;
+      newCentAmount -= 100;
+    }
+    
+    balance = new Money(newDollarAmount, newCentAmount);
+  }
 
 }
