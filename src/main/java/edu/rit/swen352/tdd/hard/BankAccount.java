@@ -77,7 +77,17 @@ public class BankAccount {
     }
 
     public void withdraw(Money money) {
-        assert false;
+        int updatedDollars = getDollars() - money.dollars();
+        int updatedCents = getCents() - money.cents();
+
+        if (updatedCents < 0) {
+            updatedDollars -= 1;
+            updatedCents += 100;
+        }
+
+        updatedDollars = Math.max(0, updatedDollars);
+        
+        balance = new Money(updatedDollars, updatedCents);
     }
 
 }
