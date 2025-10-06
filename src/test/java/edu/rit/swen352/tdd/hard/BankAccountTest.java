@@ -39,4 +39,11 @@ class BankAccountTest {
         assertTrue(bankAccount.isAccountEmpty());
     }
 
+    @Test
+    @DisplayName("Test filled account")
+    void isAccEmpty2() {
+        BankAccount bankAccount2 = new BankAccount(new Money(1, 1));
+        assertFalse(bankAccount2.isAccountEmpty());
+    }
+
 }
