@@ -48,7 +48,9 @@ class BankAccountTest {
 
     @Test
     @DisplayName("Test deposit")
-    void deposit() {
+    void deposit() {    
         bankAccount.deposit(new Money(1, 1));
+        String expected = "$1.01";
+        assertEquals(bankAccount.getBalance(), expected);
     }
 }

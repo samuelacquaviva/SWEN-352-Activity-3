@@ -67,7 +67,13 @@ public class BankAccount {
     }
 
     public void deposit(Money money) {
-        assert false;
+        int updatedDollars = getDollars() + money.dollars();
+        int updatedCents = getCents() + money.cents();
+
+        updatedDollars += Math.floor(updatedCents / 100);
+        updatedCents = updatedCents % 100;
+        
+        this.balance = new Money(updatedDollars, updatedCents);
     }
 
 }
