@@ -59,8 +59,11 @@ public class BankAccount {
     }
 
     public Boolean isAccountEmpty() {
-        assert false;
-        return false;
+        if(this.getBalance().equals("$0.00")){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
