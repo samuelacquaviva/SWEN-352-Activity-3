@@ -7,6 +7,10 @@ public class SimpleBankAccount {
     balance = 0;
   }
 
+  SimpleBankAccount(float amount) {
+    balance = amount;
+  }
+
   float getBalance() {
     return balance;
   }
