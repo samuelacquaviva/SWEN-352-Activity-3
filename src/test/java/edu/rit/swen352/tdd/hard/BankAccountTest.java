@@ -20,7 +20,7 @@ class BankAccountTest {
 
     @Test
     @DisplayName("Test empty constructor")
-    void testConstructor() {
+    void Constructor() {
         String expected = "$0.00";
         assertEquals(bankAccount.getBalance(), expected);
     }

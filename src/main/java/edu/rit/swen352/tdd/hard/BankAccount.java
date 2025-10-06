@@ -4,7 +4,7 @@ package edu.rit.swen352.tdd.hard;
  * A Value Object for American monetary values with fixed integer
  * values for dollars and cents.
  */
-record Money() {}
+record Money(int dollars, int cents) {}
 
 /**
  * An American bank account that permits deposits and withdrawals.
@@ -26,14 +26,25 @@ record Money() {}
  * </ul>
  */
 public class BankAccount {
+    private Money balance;
 
     public BankAccount(){
-        assert false;
+        this.balance = new Money(0, 0);
     }
 
-    public Object getBalance() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
+    public int getDollars() {
+        return balance.dollars();
+    }
+
+    public int getCents() {
+        return balance.cents();
+    }
+
+    public String getBalance() {
+        if(getCents() == 0){
+            return "$" + getDollars() + ".00";
+        }
+        return "$" + getDollars() + "." + getCents(); 
     }
 
 }
