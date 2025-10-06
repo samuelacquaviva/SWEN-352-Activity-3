@@ -18,9 +18,17 @@ class SimpleBankAccountTest {
   }
 
   @Test
-  @DisplayName("Constructor should set balance to 0 ")
+  @DisplayName("Constructor with no args should set balance to 0 ")
   void testConstructor() {
     float expected = 0;
+    assertEquals(expected, sba.getBalance());
+  }
+
+  @Test
+  @DisplayName("Constructor with amount arg should set balance to that amount")
+  void testConstructor2() {
+    sba = new SimpleBankAccount(2.30f);
+    float expected = 2.30f;
     assertEquals(expected, sba.getBalance());
   }
 
