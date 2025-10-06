@@ -46,4 +46,9 @@ class BankAccountTest {
         assertFalse(bankAccount2.isAccountEmpty());
     }
 
+    @Test
+    @DisplayName("Test deposit")
+    void deposit() {
+        bankAccount.deposit(new Money(1, 1));
+    }
 }

@@ -66,4 +66,8 @@ public class BankAccount {
         }
     }
 
+    public void deposit(Money money) {
+        assert false;
+    }
+
 }
