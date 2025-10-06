@@ -76,4 +76,8 @@ public class BankAccount {
         this.balance = new Money(updatedDollars, updatedCents);
     }
 
+    public void withdraw(Money money) {
+        assert false;
+    }
+
 }
