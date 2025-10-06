@@ -13,6 +13,10 @@ public class BankAccount {
     balance = new Money(0, 0);
   }
 
+  BankAccount(Money amount) {
+    balance = new Money(amount.dollars(), amount.cents());
+  }
+
   public int getDollars() {
     return balance.dollars();
   }
