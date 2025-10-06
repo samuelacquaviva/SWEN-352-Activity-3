@@ -27,4 +27,13 @@ record Money() {}
  */
 public class BankAccount {
 
+    public BankAccount(){
+        assert false;
+    }
+
+    public Object getBalance() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getBalance'");
+    }
+
 }
