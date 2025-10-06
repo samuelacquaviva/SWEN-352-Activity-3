@@ -19,9 +19,18 @@ class BankAccountTest {
   }
 
   @Test
-  @DisplayName("Constructor should set balance to $0.00 when returned")
+  @DisplayName("Constructor should set balance to $0.00")
   void testConstructor() {
     String expected = "$0.00";
+    assertEquals(expected, ba.getBalance());
+  }
+
+  @Test
+  @DisplayName("Constructor should set balance to $2.30")
+  void testConstructor2() {
+    String expected = "$2.30";
+    Money amount = new Money(2,30);
+    ba = new BankAccount(amount);
     assertEquals(expected, ba.getBalance());
   }
 
