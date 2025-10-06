@@ -35,7 +35,11 @@ public class BankAccount {
     }
 
     public BankAccount(Money money){
-        assert false;
+        if(money.dollars() >= 0 && money.cents() >= 0){
+            this.balance = money;
+        }else{
+            throw new InputMismatchException("ERROR: Cannot enter a negative value");
+        }
     }
 
     public int getDollars() {
@@ -47,8 +51,8 @@ public class BankAccount {
     }
 
     public String getBalance() {
-        if(getCents() == 0){
-            return "$" + getDollars() + ".00";
+        if(getCents() < 10){
+            return "$" + getDollars() + ".0" + getCents();
         }
         return "$" + getDollars() + "." + getCents(); 
     }

@@ -30,7 +30,7 @@ class BankAccountTest {
     void Constructor2() {
         BankAccount bankAccount2 = new BankAccount(new Money(1, 1));
         String expected = "$1.01";
-        assertEquals(bankAccount.getBalance(), expected);
+        assertEquals(bankAccount2.getBalance(), expected);
     }
 
 }
