@@ -1,5 +1,7 @@
 package edu.rit.swen352.tdd.hard;
 
+import java.util.InputMismatchException;
+
 /**
  * A Value Object for American monetary values with fixed integer
  * values for dollars and cents.
@@ -30,6 +32,10 @@ public class BankAccount {
 
     public BankAccount(){
         this.balance = new Money(0, 0);
+    }
+
+    public BankAccount(Money money){
+        assert false;
     }
 
     public int getDollars() {
