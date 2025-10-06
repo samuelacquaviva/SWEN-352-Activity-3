@@ -33,4 +33,10 @@ class BankAccountTest {
         assertEquals(bankAccount2.getBalance(), expected);
     }
 
+    @Test
+    @DisplayName("Test empty account")
+    void isAccEmpty() {
+        assertTrue(bankAccount.isAccountEmpty());
+    }
+
 }

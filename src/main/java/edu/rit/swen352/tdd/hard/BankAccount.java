@@ -1,6 +1,7 @@
 package edu.rit.swen352.tdd.hard;
 
 import java.util.InputMismatchException;
+import java.util.function.BooleanSupplier;
 
 /**
  * A Value Object for American monetary values with fixed integer
@@ -55,6 +56,11 @@ public class BankAccount {
             return "$" + getDollars() + ".0" + getCents();
         }
         return "$" + getDollars() + "." + getCents(); 
+    }
+
+    public Boolean isAccountEmpty() {
+        assert false;
+        return false;
     }
 
 }
